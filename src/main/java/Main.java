@@ -5,7 +5,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Car> carData = new ArrayList<>();
-        String confirmation = "Да";
         String nameCar = "";
         do {
             if (nameCar.isEmpty()){
@@ -17,10 +16,7 @@ public class Main {
             if (sc.hasNextInt()) {
                 int speedCar = sc.nextInt();
                 if (speedCar > 0 && speedCar <= 250) {
-                    System.out.printf("Машина %s, скорость %d правильно?\nВведи [%s/Любой текст]\n", nameCar, speedCar, confirmation);
-                    if (sc.next().equalsIgnoreCase(confirmation)) {
-                        carData.add(new Car(nameCar, speedCar));
-                    }
+                    carData.add(new Car(nameCar, speedCar));
                     nameCar = "";
                 }
             } else sc.next();
